@@ -1,13 +1,28 @@
 #include<stdio.h>
+#include<string.h>
 
-//ให้นักศึกษาเขียนโปรแกรมเพื่อรับ string 1 ตัว แล้วเขียนโปรแกรมตรวจสอบว่าเป็น palindrome หรือไม่ 
 int main(){
-    char f[10],reverse[10];
-    int i;
+    char string[20];
+    int lengh,i,c=0;
 
-    scanf("%s", f);
-    printf("%s", f);
-
+    printf("type your string:");
+    scanf("%s",string);
+    lengh = strlen(string);
+   
+    for(i=0;i<lengh;i++){
+        if(string[i] != string[lengh-1-i]){
+            c = 1;
+            break;
+        }
+    }
+    
+    if(c==1){
+        printf("not palindrome");
+    }
+    else{
+        printf("palindrome");
+    }
+        
     return 0;
 
 }
